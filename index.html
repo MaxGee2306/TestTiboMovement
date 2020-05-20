@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tech Challenge</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>
+    <script
+      src="https://unpkg.com/ml5@latest/dist/ml5.min.js"
+      type="text/javascript"
+    ></script>
+    <style>
+      .animation1,
+      .wallymation,
+      .rainymation {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+        transition: all 0.2s ease;
+      }
+
+      .container {
+        color: white;
+        background-color: #222;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+      }
+
+      #status,
+      .pose {
+        z-index: 20;
+      }
+
+      .canvasel {
+        /* transform: scale(0.3);
+        transform-origin: 100% 100%; */
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="animation1"></div>
+      <div class="rainymation"></div>
+      <div class="wallymation"></div>
+      <p id="status">Loading model...</p>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>X-waarde</th>
+          <th>Y-waarde</th>
+        </tr>
+        <tr>
+          <td>Nose:</td>
+          <td class="noseX"></td>
+          <td class="noseY"></td>
+        </tr>
+        <tr>
+          <td>Left eye:</td>
+          <td class="leftEyeX"></td>
+          <td class="leftEyeY"></td>
+        </tr>
+        <tr>
+          <td>Right eye:</td>
+          <td class="rightEyeX"></td>
+          <td class="rightEyeY"></td>
+        </tr>
+        <tr>
+          <td>Left shoulder:</td>
+          <td class="leftShoulderX"></td>
+          <td class="leftShoulderY"></td>
+        </tr>
+        <tr>
+          <td>Right shoulder:</td>
+          <td class="rightShoulderX"></td>
+          <td class="rightShoulderY"></td>
+        </tr>
+        <tr>
+          <td>Left wrist:</td>
+          <td class="leftWristX"></td>
+          <td class="leftWristY"></td>
+        </tr>
+        <tr>
+          <td>Right wrist:</td>
+          <td class="rightWristX"></td>
+          <td class="rightWristY"></td>
+        </tr>
+        <tr>
+          <td>Left elbow:</td>
+          <td class="leftElbowX"></td>
+          <td class="leftElbowY"></td>
+        </tr>
+        <tr>
+          <td>Right elbow:</td>
+          <td class="rightElbowX"></td>
+          <td class="rightElbowY"></td>
+        </tr>
+        <tr>
+          <td>Left Knee:</td>
+          <td class="leftKneeX"></td>
+          <td class="leftKneeY"></td>
+        </tr>
+        <tr>
+          <td>Right Knee:</td>
+          <td class="rightKneeX"></td>
+          <td class="rightKneeY"></td>
+        </tr>
+      </table>
+      <h1 class="pose">No pose detected</h1>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
